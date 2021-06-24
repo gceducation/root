@@ -1,0 +1,13 @@
+C:\EDU\BioRhythm\BioRhythm\bin\Debug\netcoreapp3.1\BioRhythm.exe
+C:\EDU\BioRhythm\BioRhythm\bin\Debug\netcoreapp3.1\BioRhythm.deps.json
+C:\EDU\BioRhythm\BioRhythm\bin\Debug\netcoreapp3.1\BioRhythm.runtimeconfig.json
+C:\EDU\BioRhythm\BioRhythm\bin\Debug\netcoreapp3.1\BioRhythm.runtimeconfig.dev.json
+C:\EDU\BioRhythm\BioRhythm\bin\Debug\netcoreapp3.1\BioRhythm.dll
+C:\EDU\BioRhythm\BioRhythm\bin\Debug\netcoreapp3.1\BioRhythm.pdb
+C:\EDU\BioRhythm\BioRhythm\obj\Debug\netcoreapp3.1\BioRhythm.csproj.AssemblyReference.cache
+C:\EDU\BioRhythm\BioRhythm\obj\Debug\netcoreapp3.1\BioRhythm.AssemblyInfoInputs.cache
+C:\EDU\BioRhythm\BioRhythm\obj\Debug\netcoreapp3.1\BioRhythm.AssemblyInfo.cs
+C:\EDU\BioRhythm\BioRhythm\obj\Debug\netcoreapp3.1\BioRhythm.csproj.CoreCompileInputs.cache
+C:\EDU\BioRhythm\BioRhythm\obj\Debug\netcoreapp3.1\BioRhythm.dll
+C:\EDU\BioRhythm\BioRhythm\obj\Debug\netcoreapp3.1\BioRhythm.pdb
+C:\EDU\BioRhythm\BioRhythm\obj\Debug\netcoreapp3.1\BioRhythm.genruntimeconfig.cache

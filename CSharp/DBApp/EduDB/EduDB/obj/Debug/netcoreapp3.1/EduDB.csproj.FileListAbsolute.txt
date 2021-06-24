@@ -1,0 +1,15 @@
+C:\EDU\DBApp\EduDB\EduDB\bin\Debug\netcoreapp3.1\EduDB.exe
+C:\EDU\DBApp\EduDB\EduDB\bin\Debug\netcoreapp3.1\EduDB.deps.json
+C:\EDU\DBApp\EduDB\EduDB\bin\Debug\netcoreapp3.1\EduDB.runtimeconfig.json
+C:\EDU\DBApp\EduDB\EduDB\bin\Debug\netcoreapp3.1\EduDB.runtimeconfig.dev.json
+C:\EDU\DBApp\EduDB\EduDB\bin\Debug\netcoreapp3.1\EduDB.dll
+C:\EDU\DBApp\EduDB\EduDB\bin\Debug\netcoreapp3.1\EduDB.pdb
+C:\EDU\DBApp\EduDB\EduDB\obj\Debug\netcoreapp3.1\EduDB.csproj.AssemblyReference.cache
+C:\EDU\DBApp\EduDB\EduDB\obj\Debug\netcoreapp3.1\EduDB.AssemblyInfoInputs.cache
+C:\EDU\DBApp\EduDB\EduDB\obj\Debug\netcoreapp3.1\EduDB.AssemblyInfo.cs
+C:\EDU\DBApp\EduDB\EduDB\obj\Debug\netcoreapp3.1\EduDB.csproj.CoreCompileInputs.cache
+C:\EDU\DBApp\EduDB\EduDB\obj\Debug\netcoreapp3.1\EduDB.dll
+C:\EDU\DBApp\EduDB\EduDB\obj\Debug\netcoreapp3.1\EduDB.pdb
+C:\EDU\DBApp\EduDB\EduDB\obj\Debug\netcoreapp3.1\EduDB.genruntimeconfig.cache
+C:\EDU\DBApp\EduDB\EduDB\obj\Debug\netcoreapp3.1\EduDB.csproj.GenerateResource.cache
+C:\EDU\DBApp\EduDB\EduDB\obj\Debug\netcoreapp3.1\EduDB.FormMain.resources

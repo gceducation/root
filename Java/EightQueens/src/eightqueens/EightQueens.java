@@ -64,11 +64,12 @@ public class EightQueens {
         printBoard(achBoard);
     }
     private static final Random _random = new Random();
+    public static int __jFail = 0;
 
     private static boolean fPlaceEightQueensRecursive(char[] achBoard, XY[] arrXY, int jCurY) {
         boolean fRet = false;
 
-        int jStart = _random.nextInt(8);
+        int jStart = 0;//_random.nextInt(8);
 
         for (int j = 0; j < 8; j++) {
             int jX = (j + jStart) % 8;
@@ -87,6 +88,7 @@ public class EightQueens {
                         } else {
                             setCharAt(achBoard, jX, jCurY, __chEmpty);
                             arrXY[jCurY] = null;
+                            __jFail++;
                         }
                     } else {
                         fRet = true;

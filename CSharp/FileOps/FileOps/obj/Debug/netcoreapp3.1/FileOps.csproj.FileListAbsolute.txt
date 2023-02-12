@@ -1,0 +1,13 @@
+C:\EDU\FileOps\FileOps\bin\Debug\netcoreapp3.1\FileOps.exe
+C:\EDU\FileOps\FileOps\bin\Debug\netcoreapp3.1\FileOps.deps.json
+C:\EDU\FileOps\FileOps\bin\Debug\netcoreapp3.1\FileOps.runtimeconfig.json
+C:\EDU\FileOps\FileOps\bin\Debug\netcoreapp3.1\FileOps.runtimeconfig.dev.json
+C:\EDU\FileOps\FileOps\bin\Debug\netcoreapp3.1\FileOps.dll
+C:\EDU\FileOps\FileOps\bin\Debug\netcoreapp3.1\FileOps.pdb
+C:\EDU\FileOps\FileOps\obj\Debug\netcoreapp3.1\FileOps.csproj.AssemblyReference.cache
+C:\EDU\FileOps\FileOps\obj\Debug\netcoreapp3.1\FileOps.AssemblyInfoInputs.cache
+C:\EDU\FileOps\FileOps\obj\Debug\netcoreapp3.1\FileOps.AssemblyInfo.cs
+C:\EDU\FileOps\FileOps\obj\Debug\netcoreapp3.1\FileOps.csproj.CoreCompileInputs.cache
+C:\EDU\FileOps\FileOps\obj\Debug\netcoreapp3.1\FileOps.dll
+C:\EDU\FileOps\FileOps\obj\Debug\netcoreapp3.1\FileOps.pdb
+C:\EDU\FileOps\FileOps\obj\Debug\netcoreapp3.1\FileOps.genruntimeconfig.cache

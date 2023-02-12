@@ -1,0 +1,13 @@
+C:\EDU\DeckOfCards\DeckOfCards\bin\Debug\netcoreapp3.1\DeckOfCards.exe
+C:\EDU\DeckOfCards\DeckOfCards\bin\Debug\netcoreapp3.1\DeckOfCards.deps.json
+C:\EDU\DeckOfCards\DeckOfCards\bin\Debug\netcoreapp3.1\DeckOfCards.runtimeconfig.json
+C:\EDU\DeckOfCards\DeckOfCards\bin\Debug\netcoreapp3.1\DeckOfCards.runtimeconfig.dev.json
+C:\EDU\DeckOfCards\DeckOfCards\bin\Debug\netcoreapp3.1\DeckOfCards.dll
+C:\EDU\DeckOfCards\DeckOfCards\bin\Debug\netcoreapp3.1\DeckOfCards.pdb
+C:\EDU\DeckOfCards\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.csproj.AssemblyReference.cache
+C:\EDU\DeckOfCards\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.AssemblyInfoInputs.cache
+C:\EDU\DeckOfCards\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.AssemblyInfo.cs
+C:\EDU\DeckOfCards\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.csproj.CoreCompileInputs.cache
+C:\EDU\DeckOfCards\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.dll
+C:\EDU\DeckOfCards\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.pdb
+C:\EDU\DeckOfCards\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.genruntimeconfig.cache

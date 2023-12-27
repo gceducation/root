@@ -11,7 +11,7 @@ namespace RouteFinder
         public static void Main(String [] args)
         {
             Console.WriteLine("Start");
-            new Runner().Execute();
+            Airport.InitializeFromTSV("C:/scratch/airportlist.txt");
         }
         public void Execute()
         {

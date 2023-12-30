@@ -8,14 +8,66 @@ namespace RouteFinder
 {
     public class Runner
     {
-        public static void Main(String [] args)
+        public static void Main(String[] args)
         {
+            int i;
             Console.WriteLine("Start");
-            Airport.InitializeFromTSV("C:/scratch/airportlist.txt");
+            Dictionary<String, Airport> dctAirport = Airport.InitializeFromTSV("C:/scratch/airportlist.txt");
+            List<Airport> lst = dctAirport.Values.ToList();
+
+            lst.Sort();
+            StringBuilder sb = new StringBuilder();
+            sb.Append("    ");
+            for (i = 0; i < lst.Count; i++)
+            {
+                Airport airport = lst[i];
+                if (i > 0)
+                {
+                    sb.Append(' ');
+                }
+                sb.Append(airport._sIATACode);
+            }
+
+            Console.WriteLine(sb.ToString());
+            sb.Clear();
+            for (i = 0; i < lst.Count * 4 + 4; i++)
+            {
+                sb.Append('-');
+
+            }
+            Console.WriteLine(sb.ToString());
+            sb.Clear();
+            for (i = 0; i < lst.Count; i++)
+            {
+                Airport ap = lst[i];
+                sb.Append(ap._sIATACode);
+                sb.Append(' ');
+
+                for (int iTo = 0; iTo < lst.Count; iTo++)
+                {
+                    if (i != iTo)
+                    {
+                        Airport apTo = lst[iTo];
+                        if (ap._dctAirportDep.ContainsKey(apTo._sIATACode))
+                        {
+                            sb.Append(" GO ");
+                        }
+                        else
+                        {
+                            sb.Append("    ");
+                        }
+                    }
+                    else
+                    {
+                        sb.Append("    ");
+                    }
+
+                }
+                Console.WriteLine(sb.ToString());
+                sb.Clear();
+            }
+
         }
-        public void Execute()
-        {
-            
-        }
+
     }
 }

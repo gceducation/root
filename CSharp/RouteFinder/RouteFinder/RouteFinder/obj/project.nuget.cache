@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "QhZ0zoawnZGU5TASW2udkKQnCHd1aQ31DcOGtbQ4y+hv06kJTKO9wWcV3/TTTfl40Z4Ft0xlds5SwKKWWwz3Ew==",
+  "dgSpecHash": "SnIXNQQjNMD3O8pf4uIGMbmjuDThGJFR8KdBWB0F98vGtUZqQVKiGoXk8EGt8e8YuqgTRyD/jE7r2e+viDYJew==",
   "success": true,
   "projectFilePath": "E:\\DEV\\GCEDUCATION.ROOT\\root\\CSharp\\RouteFinder\\RouteFinder\\RouteFinder\\RouteFinder.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\gadre\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\gadre\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\gadre\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
+    "C:\\Users\\gadre\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

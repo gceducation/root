@@ -13,3 +13,17 @@ E:\DEV\GCEDUCATION.ROOT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debu
 E:\DEV\GCEDUCATION.ROOT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debug\net6.0\ref\RouteFinder.dll
 E:\DEV\GCEDUCATION.ROOT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debug\net6.0\RouteFinder.pdb
 E:\DEV\GCEDUCATION.ROOT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debug\net6.0\RouteFinder.genruntimeconfig.cache
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\bin\Debug\net6.0\RouteFinder.exe
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\bin\Debug\net6.0\RouteFinder.deps.json
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\bin\Debug\net6.0\RouteFinder.runtimeconfig.json
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\bin\Debug\net6.0\RouteFinder.dll
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\bin\Debug\net6.0\RouteFinder.pdb
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debug\net6.0\RouteFinder.GeneratedMSBuildEditorConfig.editorconfig
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debug\net6.0\RouteFinder.AssemblyInfoInputs.cache
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debug\net6.0\RouteFinder.AssemblyInfo.cs
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debug\net6.0\RouteFinder.csproj.CoreCompileInputs.cache
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debug\net6.0\RouteFinder.dll
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debug\net6.0\refint\RouteFinder.dll
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debug\net6.0\RouteFinder.pdb
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debug\net6.0\RouteFinder.genruntimeconfig.cache
+E:\DEV\GCEducation.ROOT\GIT\root\CSharp\RouteFinder\RouteFinder\RouteFinder\obj\Debug\net6.0\ref\RouteFinder.dll

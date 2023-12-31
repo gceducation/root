@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +18,11 @@ namespace RouteFinder
         public Dictionary<String, Airport> _dctAirportArr;
         private static Random rng = new Random(12);
         public static Dictionary<String, Airport> __dctAirportAll = null;
-        public String ToString()
+        public override String ToString()
         {
             return _sIATACode + " - " + _sName;
         }
-        public static Dictionary<String, Airport> InitializeFromTSV(String sFQN, bool fTwoWayLink = true)
+        public static Dictionary<String, Airport> InitializeFmTSV(String sFQN, bool fTwoWayLink = true)
         {
             Dictionary<String, Airport> dctAirport = new Dictionary<string, Airport>();
             string[] arrLines = File.ReadAllLines(sFQN);
@@ -89,6 +90,69 @@ namespace RouteFinder
             _rAltitude = rAltitude;
             _dctAirportDep = lstAirportDep;
             _dctAirportArr = lstAirportArr;
+        }
+
+        public static AirRoute FindRoutes(Dictionary<String, Airport> dctAirportAll, String sIATACodeFm, String sIATACodeTo, int jOptions)
+        {
+            AirRoute airRoute = new AirRoute(dctAirportAll, sIATACodeFm, sIATACodeTo, jOptions);
+            airRoute.FindRoutes();
+            return airRoute;
+        }
+
+
+        public class AirRoute
+        {
+            public String _sIATACodeFm;
+            public String _sIATACodeTo;
+            public int _jOptions;
+            public Dictionary<String, Airport> _dctAirportAll;
+            public AirRoute(Dictionary<String, Airport> dctAirportAll, String sIATACodeFm, String sIATACodeTo, int jOptions)
+            {
+                _sIATACodeFm = sIATACodeFm;
+                _sIATACodeTo = sIATACodeTo;
+                _jOptions = jOptions;
+                _dctAirportAll = dctAirportAll;
+            }
+            public List<List<Airport>> _lstlstAirport;
+
+            internal void FindRoutes()
+            {
+                Airport aptFm = this._dctAirportAll[_sIATACodeFm];
+                Airport aptCur = aptFm;
+                Airport aptTo = this._dctAirportAll[_sIATACodeTo];
+                int jListId = 0;
+                int jPos = 0;
+                this._lstlstAirport = new List<List<Airport>>();
+                this._lstlstAirport.Add(new List<Airport>());
+                FindRoutesRecursive(aptFm, aptTo, aptCur, jListId, jPos);
+            }
+
+            private void FindRoutesRecursive(Airport aptFm, Airport aptTo, Airport aptCur, int jListId, int jPos)
+            {
+                int j;
+                for (j = 0; j < aptCur._dctAirportDep.Count; j++)
+                {
+                    KeyValuePair<String, Airport> kvp = aptCur._dctAirportDep.ElementAt(j);
+                    Airport aptAlready = this._lstlstAirport[jListId].FirstOrDefault(o => String.Compare(o._sIATACode, kvp.Key) == 0);
+                    if (aptAlready != null)
+                    {
+                        continue;
+                    }
+                    if (String.Compare(kvp.Key, _sIATACodeTo) == 0)
+                    {
+                        Console.WriteLine("Got");
+                    }
+                    else
+                    {
+                        this._lstlstAirport[jListId].Add(aptCur);
+                        jPos++;
+                        Airport aptNext = kvp.Value;
+                        FindRoutesRecursive(aptFm, aptTo, aptNext, jListId, jPos);
+                    }
+
+
+                }
+            }
         }
     }
 }

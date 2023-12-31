@@ -12,7 +12,7 @@ namespace RouteFinder
         {
             int i;
             Console.WriteLine("Start");
-            Dictionary<String, Airport> dctAirport = Airport.InitializeFromTSV("C:/scratch/airportlist.txt");
+            Dictionary<String, Airport> dctAirport = Airport.InitializeFmTSV("C:/scratch/airportlist.txt");
             List<Airport> lst = dctAirport.Values.ToList();
 
             lst.Sort();
@@ -66,7 +66,7 @@ namespace RouteFinder
                 Console.WriteLine(sb.ToString());
                 sb.Clear();
             }
-
+            Airport.FindRoutes(dctAirport, "PNQ", "TLS", 0);
         }
 
     }

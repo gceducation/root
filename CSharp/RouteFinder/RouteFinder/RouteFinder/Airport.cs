@@ -114,6 +114,7 @@ namespace RouteFinder
                 _dctAirportAll = dctAirportAll;
             }
             public List<List<Airport>> _lstlstAirport;
+            public List<List<Airport>> _lstlstRoutes;
 
             internal void FindRoutes()
             {
@@ -124,34 +125,51 @@ namespace RouteFinder
                 int jPos = 0;
                 this._lstlstAirport = new List<List<Airport>>();
                 this._lstlstAirport.Add(new List<Airport>());
-                FindRoutesRecursive(aptFm, aptTo, aptCur, jListId, jPos);
+                this._lstlstRoutes = new List<List<Airport>>();
+                List<Airport> lstAptCur = new List<Airport>();
+                FindRoutesRecursive(aptFm, aptTo, aptCur, jListId, jPos, lstAptCur);
             }
 
-            private void FindRoutesRecursive(Airport aptFm, Airport aptTo, Airport aptCur, int jListId, int jPos)
+            private void FindRoutesRecursive(Airport aptFm, Airport aptTo, Airport aptCur, int jListId, int jPos, List<Airport> lstAptCur)
             {
-                int j;
-                for (j = 0; j < aptCur._dctAirportDep.Count; j++)
+                lstAptCur.Add(aptCur);
+                int jCountStart = lstAptCur.Count;
+                if (String.Compare(aptCur._sIATACode, aptTo._sIATACode) == 0)
                 {
-                    KeyValuePair<String, Airport> kvp = aptCur._dctAirportDep.ElementAt(j);
-                    Airport aptAlready = this._lstlstAirport[jListId].FirstOrDefault(o => String.Compare(o._sIATACode, kvp.Key) == 0);
-                    if (aptAlready != null)
+                    List<Airport> lstRepl = ReplicateList(this._lstlstAirport[jListId]);
+                    this._lstlstRoutes.Add(lstRepl);
+
+                }
+                else
+                {
+                    int j;
+                    for (j = 0; j < aptCur._dctAirportDep.Count; j++)
                     {
-                        continue;
-                    }
-                    if (String.Compare(kvp.Key, _sIATACodeTo) == 0)
-                    {
-                        Console.WriteLine("Got");
-                    }
-                    else
-                    {
+                        KeyValuePair<String, Airport> kvp = aptCur._dctAirportDep.ElementAt(j);
+                        Airport aptAlready = this._lstlstAirport[jListId].FirstOrDefault(o => String.Compare(o._sIATACode, kvp.Key) == 0);
+                        if (aptAlready != null)
+                        {
+                            continue;
+                        }
+
                         this._lstlstAirport[jListId].Add(aptCur);
                         jPos++;
                         Airport aptNext = kvp.Value;
-                        FindRoutesRecursive(aptFm, aptTo, aptNext, jListId, jPos);
+                        FindRoutesRecursive(aptFm, aptTo, aptNext, jListId, jPos, lstAptCur);
                     }
-
-
                 }
+                int jCountEnd = lstAptCur.Count;
+                lstAptCur.RemoveAt(jCountStart - 1);
+            }
+
+            private List<Airport> ReplicateList(List<Airport> lstAirport)
+            {
+                List<Airport> lstRet = new List<Airport>();
+                foreach (Airport apt in lstAirport)
+                {
+                    lstRet.Add(apt);
+                }
+                return lstRet;
             }
         }
     }

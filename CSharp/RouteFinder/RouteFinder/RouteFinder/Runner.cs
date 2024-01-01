@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static RouteFinder.Airport;
 
 namespace RouteFinder
 {
@@ -66,7 +67,7 @@ namespace RouteFinder
                 Console.WriteLine(sb.ToString());
                 sb.Clear();
             }
-            Airport.FindRoutes(dctAirport, "PNQ", "TLS", 0);
+            AirRoute airRoute = Airport.FindRoutes(dctAirport, "PNQ", "BOM", 0);
         }
 
     }

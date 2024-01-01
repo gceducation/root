@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DEV\\GCEducation.ROOT\\GIT\\root\\CSharp\\RouteFinder\\RouteFinder\\RouteFinder\\RouteFinder.csproj": {}
+    "E:\\DEV\\GCEDUCATION.ROOT\\root\\CSharp\\RouteFinder\\RouteFinder\\RouteFinder\\RouteFinder.csproj": {}
   },
   "projects": {
-    "E:\\DEV\\GCEducation.ROOT\\GIT\\root\\CSharp\\RouteFinder\\RouteFinder\\RouteFinder\\RouteFinder.csproj": {
+    "E:\\DEV\\GCEDUCATION.ROOT\\root\\CSharp\\RouteFinder\\RouteFinder\\RouteFinder\\RouteFinder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DEV\\GCEducation.ROOT\\GIT\\root\\CSharp\\RouteFinder\\RouteFinder\\RouteFinder\\RouteFinder.csproj",
+        "projectUniqueName": "E:\\DEV\\GCEDUCATION.ROOT\\root\\CSharp\\RouteFinder\\RouteFinder\\RouteFinder\\RouteFinder.csproj",
         "projectName": "RouteFinder",
-        "projectPath": "E:\\DEV\\GCEducation.ROOT\\GIT\\root\\CSharp\\RouteFinder\\RouteFinder\\RouteFinder\\RouteFinder.csproj",
+        "projectPath": "E:\\DEV\\GCEDUCATION.ROOT\\root\\CSharp\\RouteFinder\\RouteFinder\\RouteFinder\\RouteFinder.csproj",
         "packagesPath": "C:\\Users\\gadre\\.nuget\\packages\\",
-        "outputPath": "E:\\DEV\\GCEducation.ROOT\\GIT\\root\\CSharp\\RouteFinder\\RouteFinder\\RouteFinder\\obj\\",
+        "outputPath": "E:\\DEV\\GCEDUCATION.ROOT\\root\\CSharp\\RouteFinder\\RouteFinder\\RouteFinder\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\gadre\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,8 +51,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -66,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

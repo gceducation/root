@@ -16,7 +16,7 @@ namespace RouteFinder
         public float _rAltitude;
         public Dictionary<String, Airport> _dctAirportDep;
         public Dictionary<String, Airport> _dctAirportArr;
-        private static Random rng = new Random(12);
+        private static Random rng = new Random(120);
         public static Dictionary<String, Airport> __dctAirportAll = null;
         public override String ToString()
         {
@@ -76,9 +76,9 @@ namespace RouteFinder
 
         }
 
-        int IComparable<Airport>.CompareTo(Airport other)
+        int IComparable<Airport>.CompareTo(Airport apOther)
         {
-            return (this._sIATACode.CompareTo(other._sIATACode));
+            return (this._sIATACode.CompareTo(apOther._sIATACode));
         }
 
         public Airport(string sName, string sIATACode, float rLat, float rLon, float rAltitude, Dictionary<String, Airport> lstAirportDep, Dictionary<String, Airport> lstAirportArr)
@@ -92,74 +92,133 @@ namespace RouteFinder
             _dctAirportArr = lstAirportArr;
         }
 
-        public static AirRoute FindRoutes(Dictionary<String, Airport> dctAirportAll, String sIATACodeFm, String sIATACodeTo, int jOptions)
+        public static AirRoutes FindRoutes(Dictionary<String, Airport> dctAirportAll, String sIATACodeFm, String sIATACodeTo, int jHopsCountMax)
         {
-            AirRoute airRoute = new AirRoute(dctAirportAll, sIATACodeFm, sIATACodeTo, jOptions);
+            AirRoutes airRoute = new AirRoutes(dctAirportAll, sIATACodeFm, sIATACodeTo, jHopsCountMax);
             airRoute.FindRoutes();
             return airRoute;
         }
 
-
-        public class AirRoute
+        public class AirportDist : IComparable<AirportDist>
         {
+            public Airport _apStart;
+            public Airport _apEnd;
+            public double _qDist;
+            public AirportDist(Airport apStart, Airport apEnd)
+            {
+                this._apStart = apStart;
+                this._apEnd = apEnd;
+                _qDist = Util.GetDistance(apStart._rLat, apStart._rLon, apEnd._rLat, apEnd._rLon);
+            }
+  
+            int IComparable<AirportDist>.CompareTo(AirportDist apdOther)
+            {
+                return Math.Sign(this._qDist - apdOther._qDist);
+            }
+        }
+        public class AirRoutes
+        {
+            private static Random rng = new Random();
+            public class AirSegment : IComparable<AirSegment>
+            {
+                public AirSegment(List<AirportDist> lstApDist)
+                {
+                    this._lstApDist = lstApDist;
+                    _qDist = lstApDist.Sum(o => o._qDist);
+                    _qPrice = _qDist * rng.Next(30, 90);
+                    _qTime = _qDist / rng.Next(600, 1200);
+                }
+                public List<AirportDist> _lstApDist;
+                public double _qDist;
+                public double _qPrice;
+                public double _qTime;
+
+                int IComparable<AirSegment>.CompareTo(AirSegment airSegOther)
+                {
+                    return Math.Sign(this._qDist - airSegOther._qDist);
+                }
+            }
             public String _sIATACodeFm;
             public String _sIATACodeTo;
-            public int _jOptions;
+            public int _jHopsCountMax;
             public Dictionary<String, Airport> _dctAirportAll;
-            public AirRoute(Dictionary<String, Airport> dctAirportAll, String sIATACodeFm, String sIATACodeTo, int jOptions)
+            public AirRoutes(Dictionary<String, Airport> dctAirportAll, String sIATACodeFm, String sIATACodeTo, int jHopsCountMax)
             {
                 _sIATACodeFm = sIATACodeFm;
                 _sIATACodeTo = sIATACodeTo;
-                _jOptions = jOptions;
+                _jHopsCountMax = jHopsCountMax;
                 _dctAirportAll = dctAirportAll;
             }
-            public List<List<Airport>> _lstlstAirport;
-            public List<List<Airport>> _lstlstRoutes;
+            public List<List<Airport>> _lstlstRoutes = new List<List<Airport>>();
+            public List<List<AirportDist>> _lstHops = new List<List<AirportDist>>();
+            public List<AirSegment> _lstAirSegments = new List<AirSegment>();
 
             internal void FindRoutes()
             {
                 Airport aptFm = this._dctAirportAll[_sIATACodeFm];
                 Airport aptCur = aptFm;
                 Airport aptTo = this._dctAirportAll[_sIATACodeTo];
-                int jListId = 0;
-                int jPos = 0;
-                this._lstlstAirport = new List<List<Airport>>();
-                this._lstlstAirport.Add(new List<Airport>());
-                this._lstlstRoutes = new List<List<Airport>>();
+
                 List<Airport> lstAptCur = new List<Airport>();
-                FindRoutesRecursive(aptFm, aptTo, aptCur, jListId, jPos, lstAptCur);
+                
+                FindRoutesRecursive(0, 0, aptFm, aptTo, aptCur, lstAptCur);
+                foreach (List<Airport> lstApt in this._lstlstRoutes)
+                {
+                    List<AirportDist> lstApDist = new List<AirportDist>();
+                    for (int i = 0; i < lstApt.Count - 1; i++)
+                    {
+                        AirportDist apd = new AirportDist(lstApt[i], lstApt[i + 1]);
+                        lstApDist.Add(apd);
+                    }
+                  
+                    AirSegment airSeg = new AirSegment(lstApDist);
+                    _lstAirSegments.Add(airSeg);
+
+                }
+                _lstAirSegments.Sort();
             }
 
-            private void FindRoutesRecursive(Airport aptFm, Airport aptTo, Airport aptCur, int jListId, int jPos, List<Airport> lstAptCur)
+            private void FindRoutesRecursive(int jCurHop, int jFound, Airport aptFm, Airport aptTo, Airport aptCur, List<Airport> lstAptCur)
             {
-                lstAptCur.Add(aptCur);
-                int jCountStart = lstAptCur.Count;
-                if (String.Compare(aptCur._sIATACode, aptTo._sIATACode) == 0)
+                jCurHop++;
+                if (jCurHop < this._jHopsCountMax)
                 {
-                    List<Airport> lstRepl = ReplicateList(this._lstlstAirport[jListId]);
-                    this._lstlstRoutes.Add(lstRepl);
-
-                }
-                else
-                {
-                    int j;
-                    for (j = 0; j < aptCur._dctAirportDep.Count; j++)
+                    lstAptCur.Add(aptCur);
+                    int jCountStart = lstAptCur.Count;
+                    if (String.Compare(aptCur._sIATACode, aptTo._sIATACode) == 0)
                     {
-                        KeyValuePair<String, Airport> kvp = aptCur._dctAirportDep.ElementAt(j);
-                        Airport aptAlready = this._lstlstAirport[jListId].FirstOrDefault(o => String.Compare(o._sIATACode, kvp.Key) == 0);
-                        if (aptAlready != null)
+                        Airport aptLast = lstAptCur[lstAptCur.Count - 2];
+                        List<Airport> lstRepl = ReplicateList(lstAptCur);
+                        this._lstlstRoutes.Add(lstRepl);
+                       
+                        Console.WriteLine("Found via " + aptLast);
+                        if (_lstlstRoutes.Count > 10)
                         {
-                            continue;
+
                         }
 
-                        this._lstlstAirport[jListId].Add(aptCur);
-                        jPos++;
-                        Airport aptNext = kvp.Value;
-                        FindRoutesRecursive(aptFm, aptTo, aptNext, jListId, jPos, lstAptCur);
                     }
+                    else
+                    {
+                        int j;
+                        for (j = 0; j < aptCur._dctAirportDep.Count; j++)
+                        {
+                            KeyValuePair<String, Airport> kvp = aptCur._dctAirportDep.ElementAt(j);
+                            Airport aptAlready = lstAptCur.FirstOrDefault(o => String.Compare(o._sIATACode, kvp.Key) == 0);
+                            if (aptAlready != null)
+                            {
+                                continue;
+                            }
+
+                            //this._lstlstAirport[jListId].Add(aptCur);
+                            Airport aptNext = kvp.Value;
+                            FindRoutesRecursive(jCurHop, jFound, aptFm, aptTo, aptNext, lstAptCur);
+                        }
+                    }
+                    int jCountEnd = lstAptCur.Count;
+                    lstAptCur.RemoveAt(jCountStart - 1);
                 }
-                int jCountEnd = lstAptCur.Count;
-                lstAptCur.RemoveAt(jCountStart - 1);
+
             }
 
             private List<Airport> ReplicateList(List<Airport> lstAirport)
@@ -172,5 +231,19 @@ namespace RouteFinder
                 return lstRet;
             }
         }
+    }
+    public class Util
+    {
+        public static double GetDistance(double rLat1, double rLon1, double rLat2, double rLon2)
+        {
+            double rLat1Rad = rLat1 * (Math.PI / 180.0);
+            double rLon1Rad = rLon1 * (Math.PI / 180.0);
+            double rLat2Rad = rLat2 * (Math.PI / 180.0);
+            double rLon2Rad = rLon2 * (Math.PI / 180.0) - rLon1Rad;
+            double q = Math.Pow(Math.Sin((rLat2Rad - rLat1Rad) / 2.0), 2.0) + Math.Cos(rLat1Rad) * Math.Cos(rLat2Rad) * Math.Pow(Math.Sin(rLon2Rad / 2.0), 2.0);
+            q = 6371.0 * (2.0 * Math.Atan2(Math.Sqrt(q), Math.Sqrt(1.0 - q)));
+            return q;
+        }
+
     }
 }

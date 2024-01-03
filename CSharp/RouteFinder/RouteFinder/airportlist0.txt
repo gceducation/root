@@ -1,0 +1,23 @@
+ident	type	name	elevation_ft	continent	iso_country	iso_region	municipality	gps_code	iata_code	local_code	coordinates
+EBBR	large_airport	Brussels Airport	184	EU	BE	BE-BRU	Brussels	EBBR	BRU		4.48443984985, 50.901401519800004
+EDDF	large_airport	Frankfurt am Main Airport	364	EU	DE	DE-HE	Frankfurt am Main	EDDF	FRA		8.570556, 50.033333
+EDDM	large_airport	Munich Airport	1487	EU	DE	DE-BY	Munich	EDDM	MUC		11.7861, 48.353802
+EFHK	large_airport	Helsinki Vantaa Airport	179	EU	FI	FI-ES	Helsinki	EFHK	HEL		24.963300704956, 60.317199707031
+EGBB	large_airport	Birmingham International Airport	327	EU	GB	GB-ENG	Birmingham	EGBB	BHX		-1.74802994728, 52.453899383499994
+EGCC	large_airport	Manchester Airport	257	EU	GB	GB-ENG	Manchester	EGCC	MAN		-2.2749500274658203, 53.35369873046875
+EGLL	large_airport	London Heathrow Airport	83	EU	GB	GB-ENG	London	EGLL	LHR		-0.461941, 51.4706
+EHAM	large_airport	Amsterdam Airport Schiphol	-11	EU	NL	NL-NH	Amsterdam	EHAM	AMS		4.76389, 52.308601
+ELLX	large_airport	Luxembourg-Findel International Airport	1234	EU	LU	LU-L	Luxembourg	ELLX	LUX		6.2044444, 49.6233333
+LEBL	large_airport	Barcelona International Airport	12	EU	ES	ES-CT	Barcelona	LEBL	BCN		2.07846, 41.2971
+LFBO	large_airport	Toulouse-Blagnac Airport	499	EU	FR	FR-OCC	Toulouse/Blagnac	LFBO	TLS		1.36382, 43.629101
+LFPG	large_airport	Charles de Gaulle International Airport	392	EU	FR	FR-IDF	Paris	LFPG	CDG		2.55, 49.012798
+LIMC	large_airport	Malpensa International Airport	768	EU	IT	IT-25	Milan	LIMC	MXP	MI12	8.72811, 45.6306
+LTFM	large_airport	Istanbul Airport	325	AS	TR	TR-34	Istanbul	LTFM	IST		28.751944, 41.275278
+LOWW	large_airport	Vienna International Airport	600	EU	AT	AT-9	Vienna	LOWW	VIE		16.569700241089, 48.110298156738
+VABB	large_airport	Chhatrapati Shivaji International Airport	39	AS	IN	IN-MM	Mumbai	VABB	BOM		72.8678970337, 19.0886993408
+VIDP	large_airport	Indira Gandhi International Airport	777	AS	IN	IN-DL	New Delhi	VIDP	DEL		77.103104, 28.5665
+VAPO	medium_airport	Pune Airport	1942	AS	IN	IN-MM	Pune	VAPO	PNQ		73.9197006225586, 18.58209991455078
+VECC	large_airport	Netaji Subhash Chandra Bose International Airport	16	AS	IN	IN-WB	Kolkata	VECC	CCU		88.44670104980469, 22.654699325561523
+VOBL	large_airport	Kempegowda International Airport	3000	AS	IN	IN-KA	Bangalore	VOBL	BLR		77.706299, 13.1979
+VOMM	large_airport	Chennai International Airport	52	AS	IN	IN-TN	Chennai	VOMM	MAA		80.16929626464844, 12.990005493164062
+

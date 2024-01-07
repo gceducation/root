@@ -87,8 +87,7 @@ namespace RouteFinder
                 }
                 Console.Write(apDist._apEnd._sIATACode);
                 Console.Write(" = " + airSeg._qDist.ToString("0.00") + " " + airSeg._qPrice.ToString("0.00"));
-                Console.WriteLine();
-                
+                Console.WriteLine();                
             }
             Console.WriteLine();
 
